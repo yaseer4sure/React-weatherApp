@@ -43,6 +43,10 @@ export default function Weather() {
 
   console.log(weatherData);
 
+  const tempCelsius = weatherData?.main?.temp
+    ? (weatherData.main.temp - 273.15).toFixed(1)
+    : null;
+
   return (
     <div>
       <Search
@@ -62,7 +66,7 @@ export default function Weather() {
           <div className="date">
             <span>{getCurrentDate()}</span>
           </div>
-          <div className="temp">{weatherData?.main?.temp}</div>
+          <div className="temp">{tempCelsius}°C</div>
           <p className="description">
             {weatherData && weatherData.weather && weatherData.weather[0]
               ? weatherData.weather[0].description
