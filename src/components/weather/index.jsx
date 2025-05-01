@@ -38,7 +38,7 @@ export default function Weather() {
   }
 
   useEffect(() => {
-    fetchWeatherData("bangalore");
+    fetchWeatherData("abuja");
   }, []);
 
   console.log(weatherData);
